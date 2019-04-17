@@ -1,0 +1,24 @@
+{% extends 'input-index.html' %}
+
+{% block content %}
+<div class="flex-container d-block mx-auto mt-3" style="width: 500px">
+	<div style="height: 13vh"></div>
+	<h1>Statistics</h1>
+	<br>
+	<br>
+	<h2>Maculature:</h2>
+	<h3>Total {{ mac_weight }} kg</h3>
+	<br>
+	<br>
+	<h2>Glass:</h2>
+	<h3>Total {{ glass_weight }} kg</h3>
+	<br>
+	<br>
+	<h2>Plastic:</h2>
+	<h3>Total {{ plastic_weight }} kg</h3>
+	<br>
+	<br>
+	<h2>Iron:</h2>
+	<h3>Total {{ iron_weight }} kg</h3>
+</div>
+{% endblock %}

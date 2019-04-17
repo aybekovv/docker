@@ -1,0 +1,31 @@
+{% extends 'input-index.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="height: 13vh;"></div>
+
+	<div class="flex-container d-block mx-auto mt-3" style="width: 500px">
+
+	<form method="POST" enctype="multipart/form-data">
+	    {% csrf_token %}
+	    <fieldset class="form-group">
+
+	        <legend class="border-bottom mb-4">Profile Info</legend>
+	        <h2>{{ profile.user.username|upper }}'s coins: {{ profile.coins }}</h2>
+	        <h2>{{ profile.user.username|upper }}'s level: {{ profile.level }}</h2>
+	        <h2>To next level: {{ profile.remain_coins }} coins</h2>
+	        <h3 style="color: #6b8c42">{{profile}}</h3>
+	        
+	    </fieldset>
+	    <legend>Register Trash</legend>
+	    {{ t_form|crispy }}
+    	<legend>Add coins</legend>
+        {{ p_form|crispy }}
+    
+	    <div class="form-group text-center">
+	        <button class="btn btn-outline-info" type="submit">Add</button>
+	    </div>
+	</form>
+	</div>
+</div>
+{% endblock %}

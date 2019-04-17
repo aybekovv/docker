@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="shortcut icon" href="/media/logo.ico" type="image/x-icon" >
+        <link rel="stylesheet" href="{% static 'css/user-input.css' %}" />
+        <title>GreenCoin</title>
+    </head>
+    
+    <body>
+        <nav class="centrate">
+            <div class="container">
+                <a href="{% url 'guide-page' %}" class="logo-nav"><img src="/media/images/logo.jpg" class="logo" alt="logo.png"></a>
+                <div class="nav-links centrate">
+                    <a href="{% url 'blog:home' %}">Блог</a>
+                    <a href="{% url 'ranking' %}">Рейтинг</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'instructions' %}">Инструкции</a>
+                        <a href="{% url 'profile' %}">Профиль</a>
+                        <a href="{% url 'logout' %}">Выйти</a>
+
+                    {% else %}
+                        <a href="{% url 'login-page' %}">Войти</a>
+                        <a href="{% url 'register-page' %}">Регистрация</a>
+                    {% endif %}
+                    
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'staff-page-url' %}">Staff</a>
+                        <a href="{% url 'statistics' %}">Statistics</a>
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    {% if request.user.is_authenticated and request.user.is_staff %}
+
+    <div class="admin-panel align-items-center">
+        <a href="/admin" class="btn btn-outline-info">Admin</a>
+        {% block admin-panel %}
+
+        {% endblock %}
+
+    </div>
+    {% endif %}
+
+    <!-- <footer class="centrate">
+            <span>2019 - GreenCoin</span>
+        </footer> -->
+    <script src="main.js"></script>
+</body>
+
+</html>

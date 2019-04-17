@@ -1,0 +1,111 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<header>
+	<section id="slider" class="centrate">
+		<img src="/media/images/slider/bulb.jpg" class="slider-image" alt="bulb.jpg">
+		<img src="/media/images/slider/leaf.jpg" class="slider-image" alt="leaf.jpg">
+		<img src="/media/images/slider/beer.jpg" class="slider-image" alt="beer.jpg">
+	</section>
+	<article id="slider-text-sec" class="centrate">
+		<div class="container">
+			<h1 id="slider-main-text">Пора остановиться!</h1>
+			<div id="slider-slp-text-cntr">
+				<span class="absolute-filler">Филлер Филлер</span><!--filler-->
+				<span class="slider-spl-text">Коины</span>
+				<span class="slider-spl-text">переработка</span>
+				<span class="slider-spl-text">мусора</span>
+			</div>
+			<section></section>
+		</div>
+	</article>
+	<img src="/media/images/scroll_down.png" alt="scroll_down.png" class="scroll-down-icon">
+	<!-- <img src="../images/scroll_down.png" alt="scroll_down.png" class="scroll-down-icon" style="animation-delay:200ms;"> -->
+</header>
+<main>
+	<section id="why-sec" class="whole-sec centrate">
+		<div class="container centrate">
+			<h2 class="sec-h2">Зачем нужна сортировка мусора?</h2>
+			<p>Представьте, что будет с планетой через 100 лет, 
+				если отходы на свалку будут поступать с такой же интенсивностью, 
+				как это происходит сейчас.</p>
+			<aside id="why-grid">
+				<div class="grid-area" id="one">
+					<img src="/media/images/why-grid/dog.jpg">
+					<div class="grid-overlay">
+						<span>Свалка в Бишкеке</span>
+					</div>
+				</div>
+				<div class="grid-area" id="two">
+					<img src="/media/images/why-grid/bin.jpg">
+					<div class="grid-overlay">
+						<span>Знакомая картина</span>
+					</div>
+				</div>
+				<div class="grid-area" id="three">
+					<img src="/media/images/why-grid/clean.jpg">
+					<div class="grid-overlay">
+						<span>Ага</span>
+					</div>
+				</div>
+			</aside>
+		</div>
+	</section>
+	<section id="offer-sec" class="whole-sec centrate">
+		<div class="container centrate">
+			<h2 class="sec-h2">Сократить негативное воздействие мусора и отходов 
+				на окружающую среду можно правильно сортируя мусор и 
+				бытовые отходы.
+			</h2>
+			<p class="list-caption">2 основных правила сортировки мусора:</p>
+			<ol id="ol-list">
+				<li>Собирайте и сортируйте только чистое сырье (без остатков еды и жира).</li>
+				<li>Весь мусор нужно сжимать, чтобы он занимал меньше места.</li>
+			</ol>
+		</div>
+		<h3 class="sec-h3">Категории:</h3>
+		<div id="offer-flex">
+			<div id="paper" class="parallax centrate">
+				<span class="parallax-name">Бумага</span>
+				<span class="parallax-description">Картон, офисная бумага. тетради, альбомы, 
+					бумажные упаковки, и т.д.
+				</span>
+			</div>
+			<div id="metal" class="parallax centrate">
+				<span class="parallax-name">Металл</span>
+				<span class="parallax-description">Алюминиевые и консервные банки, 
+					металлические крышки.
+				</span>
+			</div>
+			<div id="glass" class="parallax centrate">
+				<span class="parallax-name">Стекло</span>
+				<span class="parallax-description">Бутылки из-под напитков, лекарств, 
+					косметики.
+				</span>
+			</div>
+			<div id="plastic" class="parallax centrate">
+				<span class="parallax-name">Пластиковые упаковки</span>
+				<span class="parallax-description">Если на упаковке нету маркировкиили 
+					стоит №3 или 7 — выбрасывайте такую упаковку в общий мусор.
+				</span>
+			</div>
+		</div>
+		<iframe src="https://www.youtube.com/embed/R7N5a476DKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video">
+		</iframe>
+	</section>
+</main>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

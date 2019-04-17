@@ -1,0 +1,23 @@
+{% extends 'input-index.html' %}
+
+{% block content %}
+
+<div style="height: 13vh"></div>
+
+<div class="container mt-3">
+   
+<form style="max-width: 50%;" method="get" action="{% url 'staff-page-url' %} class="form-inline staff-form">
+    <input name="q" class="form-control mr-sm-2 mb-3" type="search" placeholder="Username" aria-label="Search" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+</div>
+
+{% endblock %}
+
+{% block admin-panel %}
+
+<div class="btn-group">
+    <a class="dropdown-item" href="{% url 'blog:post-create' %}">Post</a>
+</div>
+
+{% endblock %}

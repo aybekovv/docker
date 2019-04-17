@@ -1,0 +1,27 @@
+{% extends 'input-index.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+	<div class="flex-container d-block mx-auto mt-3" style="width: 500px">
+		<div class="nav-object"></div>
+		<div class="flex-container d-block mx-auto mt-3">
+			<form method="POST">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<legend class="border-bottom mb-4">Войти в систему</legend>
+					{{ form|crispy }}
+				</fieldset>
+				<div class="form-group text-center">
+					<button class="btn btn-outline-info" type="submit">Войти</button>
+				</div>
+			</form>
+			<div class="border-top pt-3 text-center">
+				<small class="text-muted">
+					Нужен аккаунт? <a class="ml-2" href="{% url 'register-page' %}">Зарегистрироваться</a>
+				</small>
+			</div>
+		</div>
+	</div>
+{% endblock %}

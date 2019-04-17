@@ -1,0 +1,40 @@
+{% extends 'input-index.html' %}
+{% block content %}
+<div style="height: 13vh;"></div>
+<div class="container">
+  <form method="GET" class="mt-5 mb-4" action="{% url 'blog:home' %}">
+    <input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}">
+    <input type="submit" value="Search">
+  </form>
+  {% for object in object_list %}
+  <article class="media content-section">
+    <div class="media-body mt-3">
+      <div class="article-metadata">
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+      </div>
+      <h2><a class="article-title" href="{% url 'blog:post-detail' object.id %}">{{ object.title }}</a></h2>
+      <p class="article-content">{{ object.content }}</p>
+      
+      <img class="img-thumbnail" src="{{ object.postimage_set.first.image.url }}"/> 
+     
+    </div>
+  </article>
+  {% empty %}
+  {% if request.GET.q %}
+  <p>No posts found</p>
+  {% else %}
+  <p>No posts.</p>
+  {% endif %}
+  {% endfor %}
+</div>
+
+
+{% endblock content %}
+
+{% block admin-panel %}
+
+<div class="btn-group">
+    <a class="dropdown-item" href="{% url 'blog:post-create' %}">Post</a>
+</div>
+
+{% endblock %}

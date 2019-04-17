@@ -1,0 +1,44 @@
+{% extends 'input-index.html' %}
+
+{% block content %}
+<style>
+	.account-img{
+		height: 50px;
+		width: 50px;
+		margin-right: 20px;
+		margin-bottom: 16px;
+}
+</style>
+	<div style="height: 13vh;"></div>
+	<div class="flex-container d-block mx-auto mt-3" style="width: 500px">
+		<h1>Топ пользователи</h1>
+		{% for user in users %}
+			{% if not user.user.is_superuser %}
+				<div class="pt-3">
+					<article class="media content-section">
+						<img class="rounded-circle account-img" src="{{ user.image.url }}" alt="">
+						<div class="media-body">
+							<div class="article-metadata">
+								<a class="mr-2" href="#">{{ user.user.username }}</a>
+							</div>
+							<h2><a class="article-title" href="#">{{ user.coins }} coins</a></h2>
+							<p class="article-content">Level - {{ user.level }}</p>
+						</div>
+						
+					</article>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}
+
+<article class="media content-section">
+	<img class="rounded-circle article-img" src="{{ user.user.image.url }}" alt="">
+	<div class="media-body">
+		<div class="article-metadata">
+			<a class="mr-2" href="#">{{ user.username }}</a>
+		</div>
+		<h2><a class="article-title" href="#">{{ user.coins }}</a></h2>
+		<p class="article-content">{{ user.level }}</p>
+	</div>
+</article>
